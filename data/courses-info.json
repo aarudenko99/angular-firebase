@@ -1,0 +1,11 @@
+{
+  "courses" : [
+
+    {"id":1, "title":"Modern Web Development", "duration": 5, "duration-unit":"day", "description":"HTML5, CSS3, ES6/JS and more"},
+    {"id":2, "title":"Git", "duration": 3, "duration-unit":"day", "description":"Git and GitHub"},
+    {"id":3, "title":"Python", "duration": 5, "duration-unit":"day", "description":"Intro to Python"},
+    {"id":4, "title":"Java", "duration": 5, "duration-unit":"day", "description":"Intro to Java"},
+    {"id":5, "title":"Node.js", "duration": 5, "duration-unit":"day", "description":"Intro to Node.js"}
+
+  ]
+}

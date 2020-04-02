@@ -1,0 +1,24 @@
+<div class="mx-auto mb-4 ">
+<mat-card style="width: 15rem; height: 23rem; margin-right: 10px; text-align: left; text-align-last: left; ">
+  <img src="{{course.image_url}}" alt="{{course.title}}" class="mb-3 ml-5 row" mat-card-avatar mat-card-md-image>
+  <mat-card-title class="mx-auto" style="font-size: 0.9rem; margin: 0 auto;">{{course.title}}</mat-card-title>
+  <mat-card-content class="mx-auto">
+    <!-- <p>This is a {{course.duration}} {{course.duration_unit}} course</p> -->
+    <p>{{course.short_description}}</p>
+  </mat-card-content>
+  <mat-card-actions class="details-btn">
+    <button mat-button mat-stroked-button [routerLink]="['/courses', course.id]">View Course Details</button>
+  </mat-card-actions>
+</mat-card>
+</div>
+
+<!-- <div class="card m-5" style="width: 18rem;">
+  <img src="{{course.image_url}}" class="card-img-top" alt="{{course.title}}">
+  <div class="card-body">
+    <h2 class="card-title">{{course.title}}</h2>
+    <p class="card-text">This is a {{course.duration}} {{course.duration_unit}} course</p>
+    <p class="card-text">Course description: {{course.short_description}}</p>
+
+    <a [routerLink]="['/courses', course.id]" role="button" class="btn btn-primary">View Course Details</a>
+  </div>
+</div> -->

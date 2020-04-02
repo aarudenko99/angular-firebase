@@ -1,0 +1,23 @@
+<ng-container *ngIf="showCard">
+  <div class="container-fluid">
+    <h2 class="mx-auto">UserListComponent</h2>
+    <button (click)="showCard=!showCard">Toggle View</button>
+    <h3 class="mx-auto">As Cards</h3>
+    <div class="card-deck mx-auto">
+      <app-user-card *ngFor="let user of userArray" [user]="user" (userClicked)="parentFunctionHandler($event)">
+      </app-user-card>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="!showCard">
+  <div class="container-fluid">
+    <h2 class="mx-auto">UserListComponent</h2>
+    <button (click)="showCard=!showCard">Toggle View</button>
+
+    <h3 class="mx-auto">As Table</h3>
+
+    <app-user-table [userArray]="userArray" (userClicked)="parentFunctionHandler($event)">
+    </app-user-table>
+  </div>
+</ng-container>

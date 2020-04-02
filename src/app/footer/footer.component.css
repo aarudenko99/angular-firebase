@@ -1,0 +1,41 @@
+.mail {
+	width: 258.24px;
+	height: 79px;
+}
+
+.row {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.page-footer {
+	background-color: #f9f9f9;
+	width: 100%;
+	height: 220px;
+	font-size: 12px;
+	padding-top: 35px;
+	margin-top: 67px;
+}
+.logo {
+	width: 238.3px;
+	height: 98px;
+	margin-left: 34px;
+	stroke: #f9f9f9;
+	float: left;
+}
+.bold-cap {
+	text-transform: uppercase;
+	font-weight: 900;
+}
+.upper-text {
+	line-height: 16px;
+}
+.lower-text {
+	line-height: 24px;
+	margin-left: 15px;
+}
+
+.social {
+	margin-left: 50px;
+	padding-top: 35px;
+}

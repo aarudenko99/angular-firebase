@@ -1,0 +1,12 @@
+<div class="card mx-3 my-3">
+  <div class="card-body p-0 text-center">
+    <img class="card-img-top" style="width:200px" src="{{ user.photoURL }}" alt="" />
+    <h5 class="card-title d5">{{ user.first_name }} {{ user.displayName }}</h5>
+    <h6 class="card-text text-muted">Birthday:{{user.dob}}</h6>
+    <h6 [class.is-inactive]="!user.isAdmin">Admin: {{user.isActive}}</h6>
+    <div class="card-footer">
+      <button [routerLink]="['/users', user.id]" class="btn btn-primary">
+        See Profile</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+.navbar-light .navbar-nav .router-link-active {
+	background: #4fa9dc;
+	color: #fff;
+}
+.navbar {
+	width: 100%;
+	height: 133px;
+	background-color: #fff;
+}
+.logo {
+	margin-left: 39px;
+	margin-top: 0px;
+	height: 128px;
+	width: 282px;
+}
+.nav-list {
+	margin-top: 40px;
+	width: 100%;
+	height: 38px;
+	top: 0;
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 19px;
+	text-transform: uppercase;
+	color: #303669;
+	justify-content: space-between;
+	vertical-align: text-top;
+	padding-left: 180px;
+	height: 78px;
+	line-height: 100%;
+}
+.nav-item {
+	padding-right: 30px;
+}

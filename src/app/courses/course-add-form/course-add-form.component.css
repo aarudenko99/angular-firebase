@@ -1,0 +1,10 @@
+mat-form-field,
+.upload-file,
+.checkbox,
+.add-button {
+	width: 50%;
+	margin-left: 25%;
+}
+.checkbox label {
+	margin-left: 10px;
+}

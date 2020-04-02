@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand" [routerLink]="['/welcome']">
+    <!-- Desk Ready Training {{title}} -->
+    <img class="logo" src="../../assets/images/desk-ready-logo-blue.svg" alt="Desk Ready Training">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse mx-auto nav-list" id="navbarNav">
+    <ul class="navbar-nav " >
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/welcome']" routerLinkActive="router-link-active">Home</a></li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/courses']" routerLinkActive="router-link-active">View Courses</a></li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/team']" routerLinkActive="router-link-active">The Team</a></li>
+      <li class="nav-item"><a class="nav-link" [routerLink]="['/about']" routerLinkActive="router-link-active">About</a>
+      </li>
+
+      <li *ngIf="isLoggedIn" class="nav-item"><a class="nav-link" [routerLink]="['/account']"
+          routerLinkActive="router-link-active">Account</a>
+      </li>
+
+    </ul>
+
+
+    <div *ngIf="isLoggedIn" class="nav-item">
+      <span class="mr-4">Hello {{ userDisplayName }}!</span>
+
+      <a (click)="authService.signOut()">Logout</a>
+    </div>
+
+    <div *ngIf="!isLoggedIn" class="nav-item">
+      <a class="nav-link" [routerLink]="['/login']" routerLinkActive="router-link-active">Login/Register</a>
+    </div>
+  </div>
+</nav>

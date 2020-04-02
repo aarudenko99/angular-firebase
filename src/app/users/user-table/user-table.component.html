@@ -1,0 +1,17 @@
+<h3>Table View of Users</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th>User Id #</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Active</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of userArray; let i = index; let isEvenBoolean = even" [ngStyle]="{'color':(user.isActive===false ? 'red' : 'inherit'),
+                  'background-color':(isEvenBoolean==true ? 'lightgrey':'inherit') }" [user]="user"
+      [isEven]="isEvenBoolean" app-user-row>
+    </tr>
+  </tbody>
+</table>

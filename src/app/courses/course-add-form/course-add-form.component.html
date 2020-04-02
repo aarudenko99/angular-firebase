@@ -1,0 +1,127 @@
+
+<form class=" mt-5" (ngSubmit)="onAddCourse(form)" #form="ngForm">
+  <mat-form-field appearance="outline">
+    <mat-label>Course title</mat-label>
+      <input matInput name="title" ngModel required #nameCtrl="ngModel" >
+      <mat-error *ngIf="nameCtrl.invalid && nameCtrl.touched">please enter a course title!</mat-error>
+    </mat-form-field>
+
+    <br>
+<mat-form-field appearance="outline">
+  <mat-label>Course Duration</mat-label>
+    <input matInput type="number" name="duration" ngModel required #durationCtrl="ngModel">
+    <mat-error *ngIf="durationCtrl.invalid && durationCtrl.touched">please enter a course duration!</mat-error>
+  </mat-form-field>
+  <br>
+<mat-form-field appearance="outline">
+  <mat-label>Duration Unit</mat-label>
+  <mat-select name="duration_unit" ngModel #durationUnitCtrl="ngModel" required>
+    <mat-option *ngFor="let unit of durationUnits" [value]="unit" >{{unit}}</mat-option>
+    <mat-error *ngIf="durationUnitCtrl.invalid && durationUnitCtrl.touched">please enter a duration unit!</mat-error>
+  </mat-select>
+</mat-form-field>
+<br>
+<mat-form-field appearance="outline">
+  <mat-label>Course authors</mat-label>
+  <mat-select multiple name="authors" ngModel #authorCtrl="ngModel" required>
+    <mat-option *ngFor="let author of authors" [value]="author">{{author.name}}</mat-option>
+    <mat-error *ngIf="authorCtrl.invalid && authorCtrl.touched">please enter authors of the course!</mat-error>
+  </mat-select>
+</mat-form-field>
+<br>
+<mat-form-field appearance="outline">
+  <mat-label>Short Description</mat-label>
+  <textarea matInput name="short_description" ngModel #descriptionCtrl="ngModel" required></textarea>
+  <mat-error *ngIf="descriptionCtrl.invalid && descriptionCtrl.touched">please enter a course description!</mat-error>
+</mat-form-field>
+<br>
+<mat-form-field appearance="outline">
+  <mat-label>Options</mat-label>
+  <textarea matInput name="options" ngModel></textarea>
+</mat-form-field>
+<br>
+<mat-form-field appearance="outline">
+  <mat-label>Who should attend this course</mat-label>
+  <textarea matInput name="who_should_attend" ngModel #attendCtrl="ngModel" required></textarea>
+  <mat-error *ngIf="attendCtrl.invalid && attendCtrl.touched">please fill in the field!</mat-error>
+
+</mat-form-field>
+<br>
+<mat-form-field appearance="outline">
+  <mat-label>Course Objectives</mat-label>
+  <textarea matInput name="objectives" ngModel #objectivesCtrl="ngModel" required></textarea>
+  <mat-error *ngIf="objectivesCtrl.invalid && objectivesCtrl.touched">please enter the course objectives!</mat-error>
+
+</mat-form-field>
+<br>
+<mat-form-field appearance="outline">
+  <mat-label>Course Overview</mat-label>
+  <textarea matInput name="overview" ngModel #overviewCtrl="ngModel" required></textarea>
+  <mat-error *ngIf="overviewCtrl.invalid && overviewCtrl.touched">please enter a course overview!</mat-error>
+
+</mat-form-field>
+<br>
+<mat-form-field appearance="outline">
+  <mat-label>Course Outline</mat-label>
+  <textarea matInput name="outline" ngModel  #outlineCtrl="ngModel" required></textarea>
+  <mat-error *ngIf="outlineCtrl.invalid && outlineCtrl.touched">please enter a course outline!</mat-error>
+
+</mat-form-field>
+<br>
+<div class="checkbox">
+  <input type="checkbox" aria-label="Checkbox for featured course" name="featured" ngModel>
+  <label  for="featured course">Set as featured course</label>
+</div>
+
+<div class="upload-file">
+<label for="form-control-file" class="mt-3">Upload Image</label>
+  <input type="file" class="form-control-file" name="image_url" ngModel id="form-control-file" placeholder="" aria-describedby="fileHelpId" (change)="onFileSelected($event)">
+  <small id="fileHelpId" class="form-text text-muted">Use PNG with transparent background</small>
+</div>
+<button class="add-button mt-3" mat-raised-button color="primary" [disabled]="form.invalid">Add Course</button>
+</form>
+
+
+<!-- using bootstrap -->
+
+<!-- <div class="form-group mt-5">
+    <label for="course-title">Course Title</label>
+    <input type="text" class="form-control" name="title" id="course-title" >
+
+    <div class="form-group mt-3">
+    <label for="authors">select authors</label>
+    <h5 class="text-muted">Please hold cmd/ctrl key to select multiple option</h5>
+    <select class="custom-select" multiple >
+    <option *ngFor="let author of authors" [value]="author">{{author.name}}</option>
+    </select>
+    </div>
+    <div class="form-group mt-3">
+      <label for="duration">Duration</label>
+      <input type="number" class="form-control" name="duration" id="course-duration" >
+
+
+      <label for="duration-unit">Duration Unit</label>
+      <select class="form-control" id="duration-unit">
+        <option *ngFor="let unit of durationUnits" [value]="unit">{{unit}}></option>
+      </select>
+    </div>
+    <div class="form-group mt-3">
+      <label for="course-description">Course Description</label>
+      <textarea class="form-control" id="course-description" rows="3"></textarea>
+    </div>
+    <div class="form-group mt-3">
+      <label for="short-description">Short Description</label>
+      <textarea class="form-control" id="short-description" rows="2"></textarea>
+    </div>
+    <div class="form-group mt-3">
+      <label for="course-overview">Course Overview</label>
+      <textarea class="form-control" id="course-overview" rows="3"></textarea>
+    </div>
+    <div class="form-group mt-3">
+      <label for="course-outline">Course Outline</label>
+      <textarea class="form-control" id="course-outline" rows="3"></textarea>
+    </div>
+  <label for="form-control-file">Upload Image</label>
+  <input type="file" class="form-control-file" name="" id="form-control-file" placeholder="" aria-describedby="fileHelpId">
+
+  <small id="fileHelpId" class="form-text text-muted">Use PNG with transparent background</small> -->

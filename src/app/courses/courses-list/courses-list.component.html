@@ -1,0 +1,9 @@
+<div class="container-fluid">
+      <div class="row ">
+        <h1 class="mx-auto">Courses</h1>
+      </div>
+      <div class="row mx-auto">
+        <app-course *ngFor="let course of courses" [course]="course"></app-course>
+      </div>
+      <a class="btn btn-primary btn-lg" [routerLink]="['course-add']" role="button">Add Course</a>
+</div>

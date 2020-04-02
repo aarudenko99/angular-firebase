@@ -1,0 +1,87 @@
+<div class="form-container">
+
+  <!-- Default form login -->
+  <form #form1="ngForm" class="text-center border border-light p-5">
+
+    <p class="h4 mb-4" *ngIf="isSignIn">Sign in</p>
+
+    <p class="h4 mb-4" *ngIf="isRegister">Register</p>
+
+    <!-- Email -->
+    <input type="email" required name="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail"
+      [(ngModel)]="userlogin.email">
+
+
+    <!-- Password -->
+    <input type="password" #pw1 required name="password" id="defaultLoginFormPassword" class="form-control mb-4"
+      placeholder="Password" [(ngModel)]="userlogin.password">
+
+    <!-- Password -->
+    <input *ngIf="isRegister" #pw2 required type="password" id="confirmPassword" class="form-control mb-4"
+      placeholder="Password Confirmation">
+
+    <div *ngIf="isSignIn" class="d-flex justify-content-around">
+      <div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" name="" id="remember-check" value="checkedValue" checked>
+            Remember me
+          </label>
+        </div>
+      </div>
+      <div>
+        <!-- Forgot password -->
+        <a href="">Forgot password?</a>
+      </div>
+
+      <div *ngIf="isSignIn" class="d-flex justify-content-around">
+        <!-- Sign in button -->
+        <div>
+
+          <button (click)="login()" name="" id="signin-button" class="btn btn-primary" href="#"
+            [disabled]="!form1.valid" role="button">Sign in
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Register -->
+    <p *ngIf="isSignIn">Not signed up?
+      <a (click)="showRegister()" class="btn">Register</a>
+    </p>
+
+    <!-- Add logic to disable button if passwords do not match -->
+    <div *ngIf="isRegister" (click)="signup()">
+      <a name="" id="" class="btn btn-primary" href="#" role="button">Register</a>
+    </div>
+  </form>
+  <!-- Social login -->
+  <p>or sign in with:</p>
+  <div style="background-color:blueviolet">
+    <a (click)="loginFb()" type="button" class="light-blue-text mx-2">
+      <img class="s-logo" src="../../assets/images/facebook.svg" alt="" />
+    </a>
+
+    <a id="google" (click)="loginGoogle()" type="button" class="light-blue-text mx-2">
+      <img class="s-logo" src="../../assets/images/google.svg" alt="google-logo">
+      <span>Login With Google</span>
+    </a>
+  </div>
+
+  <!-- Default form login -->
+
+
+  <!-- <div *ngIf="!showSpinner; else elseBlock">
+    <span class="error" *ngIf="error">{{ error }}</span>
+
+    <button class="button" igxButton="raised" igxRipple (click)="loginFb()" id="fb">
+      <img class="s-logo" src="../../assets/images/facebook.svg" alt="">
+      <span>Login With Facebook</span>
+    </button>
+
+    <button class="button" igxButton="raised" igxRipple (click)="loginGoogle()" id="google">
+      <img class="s-logo" src="../../assets/images/google.svg" alt="">
+      <span>Login With Google</span>
+    </button>
+
+ -->
